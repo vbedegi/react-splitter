@@ -1,8 +1,12 @@
-# @geoffcox/react-splitter
+# @vbedegi/react-splitter
 
 A resizable splitter for React that leverages CSS display:grid
 
 [Live Demo](https://geoffcox.github.io/react-splitter-demo/index.html)
+
+## Disclaimer
+
+This is a fork of @geoffcox/react-splitter. All credit for the original work goes to @geoffcox
 
 ## Features
 - Vertical (left|right) and Horizontal (top/bottom) splitting

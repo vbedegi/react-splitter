@@ -199,12 +199,12 @@ export const Split = (props: React.PropsWithChildren<SplitProps>): JSX.Element =
 
   const children = React.Children.toArray(props.children);
   const primaryChild = children.length > 0 ? children[0] : <div />;
-  const secondaryChild = children.length > 1 ? children[1] : <div />;
+  const secondaryChild = children.length > 1 ? children[1] : undefined;
 
   const renderSizes = {
-    primary: percent !== undefined ? `${percent}%` : initialPrimarySize,
-    minPrimary: minPrimarySize ?? '0px',
-    minSecondary: minSecondarySize ?? '0px',
+    primary: secondaryChild ?  percent !== undefined ? `${percent}%` : initialPrimarySize : '100%',
+    minPrimary: secondaryChild ?  minPrimarySize ?? "0px" : "100%",
+    minSecondary: minSecondarySize ?? "0px"
   };
 
   const renderSplitterProps = {
@@ -248,25 +248,29 @@ export const Split = (props: React.PropsWithChildren<SplitProps>): JSX.Element =
                 )}
               </Measure>
             </div>
-            <div
-              className="splitter"
-              tabIndex={-1}
-              onPointerDown={onSplitPointerDown}
-              onPointerUp={onSplitPointerUp}
-              onPointerMove={onSplitPointerMove}
-              onDoubleClick={onSplitDoubleClick}
-            >
-              <Measure bounds onResize={onMeasureSplitter}>
-                {({ measureRef: splitterRef }) => (
-                  <div className="full-content" ref={splitterRef}>
-                    {renderSplitVisual(renderSplitterProps)}
-                  </div>
-                )}
-              </Measure>
-            </div>
-            <div className="secondary">
-              <div className="full-content">{secondaryChild}</div>
-            </div>
+            {secondaryChild && (
+              <>
+                <div
+                  className="splitter"
+                  tabIndex={-1}
+                  onPointerDown={onSplitPointerDown}
+                  onPointerUp={onSplitPointerUp}
+                  onPointerMove={onSplitPointerMove}
+                  onDoubleClick={onSplitDoubleClick}
+                >
+                  <Measure bounds onResize={onMeasureSplitter}>
+                    {({measureRef: splitterRef}) => (
+                      <div className="full-content" ref={splitterRef}>
+                        {renderSplitVisual(renderSplitterProps)}
+                      </div>
+                    )}
+                  </Measure>
+                </div>
+                <div className="secondary">
+                  <div className="full-content">{secondaryChild}</div>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}

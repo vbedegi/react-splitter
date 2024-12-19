@@ -1,6 +1,6 @@
 {
-  "name": "@geoffcox/react-splitter",
-  "version": "2.1.2",
+  "name": "@vbedegi/react-splitter",
+  "version": "2.1.3",
   "description": "A splitter for React components that leverages CSS grid templates for simple and consistent resizing.",
   "main": "build/index.js",
   "files": [
@@ -10,17 +10,17 @@
     "build:dev": "webpack --config webpack.config.js --mode development",
     "build:prod": "webpack --config webpack.config.js --mode production"
   },
-  "author": "Geoff Cox",
+  "author": "vbedegi",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/GeoffCox/react-splitter/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GeoffCox/react-splitter.git",
+    "url": "https://github.com/vbedegi/react-splitter.git",
     "directory":"package"
   },
-  "homepage": "https://github.com/GeoffCox/react-splitter/",
+  "homepage": "https://github.com/vbedegi/react-splitter/",
   "keywords": [
     "splitter",
     "resize",

@@ -48,7 +48,7 @@ const Footer = styled.div`
 export const Main = () => {
   return (
     <Root>
-      <Header>@geoffcox/react-splitter demo</Header>
+      <Header>@vbedegi/react-splitter demo</Header>
       <Content>
         <DynamicPane id="root" />
       </Content>

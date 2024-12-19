@@ -1,4 +1,4 @@
-# @geoffcox/react-splitter
+# @vbedegi/react-splitter
 
 A resizable splitter for React that leverages CSS display:grid
 
@@ -10,7 +10,7 @@ See the [../Readme.md](../README.md) for features, version history, etc.
 # Installation
 
 ```
-npm install --save @geoffcox/react-splitter
+npm install --save @vbedegi/react-splitter
 ```
 # Usage
 
